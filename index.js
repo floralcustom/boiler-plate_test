@@ -2,7 +2,12 @@ const express = require('express')
 const app = express()
 const port = 5000
 const bodyParser = require('body-parser');
+
+const config = require('./config/key');
+
 const { User } = require("./models/Users");
+
+
 
 //application/x-www.form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
@@ -11,13 +16,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://floralcustom:tjgudwns89@langipsa.xtj8n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect(config.mongoURI, {
 
 }).then(() => console.log('MongoDB Connected...')).catch(err => console.log(err))
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World! ggg')
 })
 
 app.post('/register', (req,res) => {
