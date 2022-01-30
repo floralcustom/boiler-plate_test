@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://hjseo:tjgudwns89@lcgipsa.zwlhl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://floralcustom:tjgudwns89@langipsa.xtj8n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
 
 }).then(() => console.log('MongoDB Connected...')).catch(err => console.log(err))
 
@@ -24,7 +24,6 @@ app.post('/register', (req,res) => {
 
     //회원가입 할때 필요한 정보들을 Client에서 가져오면
     //그것들을 데이터 베이스에 넣어준다.
-
 
     const user = new User(req.body)
 
